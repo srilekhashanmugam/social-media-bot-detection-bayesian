@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BotShield - Social Media Bot Detection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">BotShield</div>
+  <nav>
+    <a href="#analyzer">Analyzer</a>
+    <a href="#how">How It Works</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div>
+    <p class="tag">BAYESIAN INFERENCE • SOCIAL MEDIA SECURITY</p>
+    <h1>Detect suspicious social media activity.</h1>
+    <p>
+      Analyze account behaviour and estimate the probability that an account
+      is automated using a Bayesian inference model.
+    </p>
+    <a href="#analyzer" class="primary-btn">Analyze Account</a>
+  </div>
+</section>
+
+<section id="analyzer" class="section">
+  <div class="section-title">
+    <p class="tag">01 — ACCOUNT ANALYZER</p>
+    <h2>Enter account behaviour</h2>
+    <p>The prototype calculates a bot probability from observable activity features.</p>
+  </div>
+
+  <div class="analyzer">
+
+    <div class="form-card">
+
+      <label>Account age</label>
+      <select id="accountAge">
+        <option value="new">Less than 3 months</option>
+        <option value="medium">3 months – 1 year</option>
+        <option value="old">More than 1 year</option>
+      </select>
+
+      <label>Posts per day</label>
+      <input type="number" id="posts" value="25" min="0">
+
+      <label>Average followers</label>
+      <input type="number" id="followers" value="300" min="0">
+
+      <label>Average following</label>
+      <input type="number" id="following" value="1200" min="0">
+
+      <label>Posting interval</label>
+      <select id="interval">
+        <option value="regular">Very regular</option>
+        <option value="mixed">Mixed / irregular</option>
+        <option value="human">Mostly natural</option>
+      </select>
+
+      <label>Profile completeness</label>
+      <select id="profile">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+
+      <button id="analyzeBtn" class="primary-btn">Run Bayesian Analysis</button>
+
+    </div>
+
+    <div class="result-card">
+
+      <p class="result-label">BOT PROBABILITY</p>
+
+      <div class="probability" id="probability">--%</div>
+
+      <div class="meter">
+        <div id="meterFill"></div>
+      </div>
+
+      <div id="classification" class="classification">
+        Waiting for analysis
+      </div>
+
+      <p id="explanation">
+        Enter account information and run the analysis.
+      </p>
+
+      <div class="evidence">
+        <h3>Evidence Summary</h3>
+        <ul id="evidenceList">
+          <li>Account behaviour has not been analyzed yet.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="how" class="section light">
+  <div class="section-title">
+    <p class="tag">02 — BAYESIAN INFERENCE</p>
+    <h2>How the detection works</h2>
+  </div>
+
+  <div class="steps">
+
+    <div class="step">
+      <span>01</span>
+      <h3>Prior Probability</h3>
+      <p>
+        The model starts with an assumed baseline probability that an account
+        is a bot.
+      </p>
+    </div>
+
+    <div class="step">
+      <span>02</span>
+      <h3>Evidence</h3>
+      <p>
+        Account age, posting frequency, follower behaviour and posting patterns
+        are treated as evidence.
+      </p>
+    </div>
+
+    <div class="step">
+      <span>03</span>
+      <h3>Posterior Probability</h3>
+      <p>
+        Bayesian updating combines the prior and observed evidence to estimate
+        the final bot probability.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="formula">
+    <p class="tag">BAYES' THEOREM</p>
+    <h2>P(Bot | Evidence)</h2>
+    <p>
+      The prototype estimates how likely an account is to be a bot after
+      considering the available behavioural evidence.
+    </p>
+  </div>
+</section>
+
+<section class="notice">
+  <h2>Prototype Notice</h2>
+  <p>
+    This project is an educational Bayesian inference prototype. It does not
+    access or monitor real social media accounts and should not be treated as
+    a definitive bot detection system.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <p>BotShield • Developed by Srilekha S • BTech AI & Data Science</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
